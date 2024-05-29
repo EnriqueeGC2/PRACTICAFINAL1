@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Cliente</title>
+</head>
+<body>
+    <h1>Modificar Cliente</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.nombre.label }} {{ form.nombre(size=32) }}
+        </div>
+        <div>
+            {{ form.apellido.label }} {{ form.apellido(size=32) }}
+        </div>
+        <div>
+            {{ form.direccion.label }} {{ form.direccion(size=50) }}
+        </div>
+        <div>
+            {{ form.telefono.label }} {{ form.telefono(size=15) }}
+        </div>
+        <div>
+            {{ form.correoelectronico.label }} {{ form.correoelectronico(size=50) }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+</body>
+</html>

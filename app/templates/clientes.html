@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+<body>
+    <h1>Clientes</h1>
+    <ul>
+        {% for cliente in clientes %}
+        <li>{{ cliente.nombre }} {{ cliente.apellido }} <a 
+            href="{{ url_for('crud.modificar_cliente', clienteid=cliente.clienteid) }}">Modificar</a>
+            <form action="{{ url_for('crud.eliminar_cliente', clienteid=cliente.clienteid) }}" method="POST" style="display:inline;">
+                <button type="submit">Eliminar</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('crud.nuevo_cliente') }}">Nuevo Cliente</a>
+</body>
+</html>
